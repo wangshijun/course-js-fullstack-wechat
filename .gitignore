@@ -1,1 +1,3 @@
 node_modules
+.accesstoken.json
+.jsapiticket.json
