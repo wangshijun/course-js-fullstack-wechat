@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(XMLParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/wechat/static/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
