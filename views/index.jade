@@ -3,3 +3,27 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}
+
+    script(src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+    script.
+        var signPackage = !{JSON.stringify(signPackage)};
+        wx.config({
+            debug: true,
+            appId: signPackage.appId,
+            timestamp: signPackage.timestamp,
+            nonceStr: signPackage.nonceStr,
+            signature: signPackage.signature,
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone'
+            ]
+        });
+
+        wx.ready(function () {
+            console.log('wx.ready');
+        });
+
+

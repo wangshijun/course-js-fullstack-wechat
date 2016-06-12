@@ -29,7 +29,7 @@ JSSDK.prototype = {
                 timestamp,
                 url,
                 signature,
-                rawString,
+                // rawString,
                 nonceStr,
                 appId: instance.appId,
             });
@@ -144,19 +144,21 @@ JSSDK.prototype = {
     },
 };
 
-const sdk = new JSSDK('wx3866dd6ba4392c5d', 'cdeb1c0192aeb0281480d1a5835d7e6f');
-debug(sdk.createNonceStr());
-debug(sdk.createNonceStr());
+const jssdk = new JSSDK('wx3866dd6ba4392c5d', 'cdeb1c0192aeb0281480d1a5835d7e6f');
+module.exports = jssdk;
 
-sdk.getAccessToken(function (err, accessToken) {
-    console.log(arguments);
-});
-
-sdk.getJsApiTicket(function (err, accessToken) {
-    console.log(arguments);
-});
-
-sdk.getSignPackage('http://120.27.106.168/wechat/hello', function (err, accessToken) {
-    console.log(arguments);
-});
-
+// debug(jssdk.createNonceStr());
+// debug(jssdk.createNonceStr());
+//
+// jssdk.getAccessToken(function (err, accessToken) {
+//     console.log(arguments);
+// });
+//
+// jssdk.getJsApiTicket(function (err, accessToken) {
+//     console.log(arguments);
+// });
+//
+// jssdk.getSignPackage('http://120.27.106.168/wechat/hello', function (err, accessToken) {
+//     console.log(arguments);
+// });
+//
