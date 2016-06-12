@@ -24,6 +24,27 @@ block content
 
         wx.ready(function () {
             console.log('wx.ready');
+            wx.onMenuShareTimeline({
+                title: 'JS全栈微信开发实战', // 分享标题
+                link: window.location.href, // 分享链接
+                imgUrl: '',
+                success: function () {
+                    console.log('share success');
+                },
+                cancel: function () {
+                    console.log('share cancel');
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: 'JS全栈微信开发实战', // 分享标题
+                link: window.location.href, // 分享链接
+                imgUrl: '',
+                success: function () {
+                    console.log('share success');
+                },
+                cancel: function () {
+                    console.log('share cancel');
+                }
+            });
         });
-
 

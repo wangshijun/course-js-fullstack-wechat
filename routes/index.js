@@ -5,7 +5,7 @@ const jssdk = require('../libs/jssdk');
 
 /* GET home page. */
 router.get('/wechat/hello', function(req, res, next) {
-    jssdk.getSignPackage(req.url, function (err, signPackage) {
+    jssdk.getSignPackage(`http://120.27.106.168${req.url}`, function (err, signPackage) {
         if (err) {
             return next(err);
         }
